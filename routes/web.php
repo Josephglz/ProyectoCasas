@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CasaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,6 @@ Route::get('/', function () {
 });
 
 Route::resource('casas', 'App\Http\Controllers\CasaController');
+
+Route::delete('/deleteimage/{id}',[CasaController::class,'deleteimage']);
+Route::delete('/deleteimagebase/{id}',[CasaController::class,'deleteimagebase']);

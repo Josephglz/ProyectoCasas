@@ -20,7 +20,7 @@ class CasaFactory extends Factory
             'name' => $this->faker->name,
             'imageBase' => $this->faker->imageUrl(),
             'city' => $this->faker->city(),
-            'country' => $this->faker->country(),
+            'state' => $this->faker->country(),
             'category' => $this->faker->randomElement(['Casa', 'Apartamento', 'Casa de Campo', 'Casa de Campo']),
             'information' => 'Precio: $45',
             'description' => $this->faker->text(),

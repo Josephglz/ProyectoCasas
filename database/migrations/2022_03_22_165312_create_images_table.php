@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,15 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('casas', function (Blueprint $table) {
+        $file = new Filesystem;
+        $file->cleanDirectory(public_path('uploads/images/'));
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('imageBase');
-            $table->string('city');
-            $table->string('state');
-            $table->string('category');
-            $table->string('information');
-            $table->text('description');
+            $table->string('image');
+            $table->foreignId('casa_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +31,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('casas');
+        $file = new Filesystem;
+        $file->cleanDirectory(public_path('uploads/images/'));
+        Schema::dropIfExists('images');
     }
 };

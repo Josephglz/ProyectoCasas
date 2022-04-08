@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,16 @@
     <title>Registro Propiedades</title>
   </head>
   <body>
-    <div class="container">
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          Sistema de Registros
+        </a>
+      </div>
+    </nav>
+    <br>
+    <div class="container-sm">
         @yield('content')
     </div>
 
